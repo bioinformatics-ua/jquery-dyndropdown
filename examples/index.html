@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+
+
+    <!-- Required Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">  
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">      
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- The plugin itself -->
+    <link rel="stylesheet" href="../jquery.dyndropdown.css">      
+    <script src="../jquery.dyndropdown.js"></script>
+</head>
+<body>
+    <div>
+        <script type="text/javascript">
+                // We initialize the plugin, and update it, always using JSON with the following format
+                var json_code = JSON.stringify({
+                    option_a: {name: 'Option 1'},
+                    option_b : {
+                        name: 'Option 2',
+                        values: {
+                            response_a: 'a',
+                            response_b: 'b'
+                        }
+                    },
+                    option_c : {
+                        name: 'Option 3',
+                        values: {
+                            response_a: 'c',
+                            response_b: 'd',
+                            response_c: 'e'
+                        }
+                    }
+                });
+        </script>
+        <div class="span12">
+        <h3>Zero Configurations: </h3>
+        <div id="simple_usage"></div>
+        <script type="text/javascript">
+            $(function(){
+                var simple = $('#simple_usage').dyndropdown();
+                simple.setStructure(json_code);
+            });
+        </script>
+        <h3>Documentation:</h3>
+        <div>
+        <table class="table table-bordered">
+            <tr>
+                <th>Property</th>
+                <th>Values Possible</th>
+                <th>Decription</th>
+            </tr>
+            <tr>
+                <td>label</td>
+                <td>String, default: "Action"</td>
+                <td>Label that will appear on the button (or on the menu top in case we are using the plugin without button dropdown.</td>
+            </tr>
+            <tr>
+                <td>dropup</td>
+                <td>boolean, default: false</td>
+                <td>Indicates if the dropdown should dropup.</td>
+            </tr>
+            <tr>
+                <td>single_choice</td>
+                <td>boolean, default: true</td>
+                <td>Indicates if multiple selection should be allowed</td>
+            </tr>
+            <tr>
+                <td>left_centered_dropdown</td>
+                <td>boolean, default: false</td>
+                <td>Indicates if the dropdown should open to the left, instead of the right.</td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td>String, default: null</td>
+                <td>Indicates the width of the button eg. '100px'. Can also be a percentage, eg. '100%'.</td>
+            </tr>
+            <tr>
+                <td>button_dropdown</td>
+                <td>boolean, default: true</td>
+                <td>Indicates if we have a button dropdown, or instead just the dropdown as a menu.</td>
+            </tr>
+            <tr>
+                <td>alwaysOneOption</td>
+                <td>boolean default: false</td>
+                <td>Indicates if we should always have one option selected of every kind.</td>
+            </tr>            
+            <tr>
+                <td>onSelectionChanged</td>
+                <td>function, default: null</td>
+                <td>Callback that is executed when there's a change on the menu selections. Receives as input an object with all the selections. E.g. function(selection){ }</td>
+            </tr>
+
+        </table>
+    </div>
+    </div>
+</body>
+</html>
