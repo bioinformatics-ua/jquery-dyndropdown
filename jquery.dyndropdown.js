@@ -68,6 +68,8 @@
             },
             setStructure: function(json) {
                 $('.dyndropdown_options', self).html('');
+                selected_options = {};
+                
                 var json = JSON.parse(json);
                 menu_entries = json;
                 var selected = '<i style="margin-top:2px;" class="dyndropdown-selected pull-right icon-ok"></i>';

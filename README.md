@@ -1,4 +1,15 @@
+# What is this
 
+Jquery-dyndropdown is a jquery plugin for bootstrap that allows for a redefinable multiple selection button dropdown, with update api.
+
+The plugin allows the definition of its content using a generic JSON structure, as the one seen below.
+
+# Requirements
+
+- jQuery
+- Bootstrap
+
+# Example of zero configuration
 
 ```
 $(function(){
@@ -21,11 +32,15 @@ $(function(){
                     }
                 }
             });
+            options = {}
 
-            var simple = $('#simple_usage').dyndropdown();
+            var simple = $('#simple_usage').dyndropdown({options});
+
             simple.setStructure(json_code);
 });
 ```
+
+# Options
 
 Property | Values Possible | Decription
 ---------|-----------------|-----------
@@ -38,3 +53,9 @@ dropup | boolean, default: false | Indicates if the dropdown should dropup. |
 | alwaysOneOption | boolean default: false | Indicates if we should always have one option selected of every kind. |
 | onSelectionChanged | function, default: null | Callback that is executed when there's a change on the menu selections. Receives as input an object with all the selections. E.g. function(selection){ } |
 
+# API for returned object
+
+Method | Description |
+-------|-------------|
+setStruture(json) | Defines a new structure for the dropdown using a JSON object |
+getSelection() | Returns the selected options on a JSON manner javascript object|

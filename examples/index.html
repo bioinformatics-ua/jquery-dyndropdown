@@ -39,6 +39,17 @@
                 });
         </script>
         <div class="span12">
+        
+        <h3>What is this </h3>
+
+Jquery-dyndropdown is a jquery plugin for bootstrap that allows for a redefinable multiple selection button dropdown, with update api.
+
+The plugin allows the definition of its content using a generic JSON structure, as the one seen below.
+
+        <h3>Requirements</h3>
+- jQuery <br />
+- Bootstrap
+
         <h3>Zero Configurations: </h3>
         <div id="simple_usage"></div>
         <script type="text/javascript">
@@ -96,6 +107,23 @@
                 <td>Callback that is executed when there's a change on the menu selections. Receives as input an object with all the selections. E.g. function(selection){ }</td>
             </tr>
 
+        </table>
+    </div>
+        <h3>API for returned object:</h3>
+        <div>
+        <table class="table table-bordered">
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>setStruture(json)</td>
+                <td>Defines a new structure for the dropdown using a JSON object.</td>
+            </tr>
+            <tr>
+                <td>getSelection()</td>
+                <td>Returns the selected options on a JSON manner javascript object.</td>
+            </tr>
         </table>
     </div>
     </div>
